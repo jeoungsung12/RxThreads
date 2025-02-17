@@ -7,12 +7,75 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class SignUpViewController: UIViewController {
 
     let emailTextField = SignTextField(placeholderText: "이메일을 입력해주세요")
     let validationButton = UIButton()
     let nextButton = PointButton(title: "다음")
+    let emailPlaceholder = Observable.just("이메일을 입력해주세요")
+    
+    private var disposeBag = DisposeBag()
+    private func bind() {
+        //4자리 이상: 다음버튼 나타나고, 중복확인 버튼
+        //4자리 미만: 다음버튼 X, 중복확인 버튼 click X
+        let valid = emailTextField
+            .rx
+            .text
+            .orEmpty
+            .map { $0.count >= 4 }
+        
+        valid
+            .subscribe(with: self) { owner, value in
+                owner.validationButton.isEnabled = value
+                print("Valid Next")
+            } onDisposed: { value in
+                print("Valid Disposed")
+            }
+            .dispose()
+        
+//        valid
+//            .bind(to: nextButton.rx.isHidden, validationButton.rx.isEnabled)
+//            .disposed(by: disposeBag)
+        
+//        valid
+//            .bind(with: self) { owner, value in
+//                owner.nextButton.isHidden = value
+//                owner.validationButton.isEnabled = value
+//            }
+//            .disposed(by: disposeBag)
+        
+        validationButton.rx.tap
+            .bind(with: self) { owner, value in
+                print("중복확인 버튼 클릭")
+                owner.disposeBag = DisposeBag()
+            }
+            .disposed(by: disposeBag)
+        
+        emailPlaceholder
+            .bind(to: emailTextField.rx.placeholder)
+            .disposed(by: disposeBag)
+    }
+    
+    private func OperatorExample() {
+//        let itemA = [3, 5, 23, 8, 10, 22]
+//        
+//        Observable
+//            .repeatElement(itemA)
+//            .take(10)
+//            .subscribe(with: self) { owner, value in
+//                print("JUST \(value)")
+//            } onError: { owner, error in
+//                print("JUST \(value)")
+//            } onCompleted: { owner in
+//                print("JUST \(value)")
+//            } onDisposed: { owner in
+//                print("JUST \(value)")
+//            }
+//            .disposed(by: disposeBag)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +84,7 @@ class SignUpViewController: UIViewController {
         
         configureLayout()
         configure()
+        bind()
         
         nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
 
