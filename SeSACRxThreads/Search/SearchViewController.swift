@@ -23,6 +23,12 @@ class SearchViewController: UIViewController {
     let searchBar = UISearchBar()
     private var disposeBag = DisposeBag()
     
+    let items = Observable.just([
+        "First Item",
+        "Second Item",
+        "Third Item"
+    ])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,13 +38,35 @@ class SearchViewController: UIViewController {
         bind()
     }
     
+    func test() {
+        let mentor = Observable.of("Hue", "Jack", "Bran", "Den")
+        let age = Observable.of(10, 11, 12, 13)
+        
+        Observable.zip(mentor, age)
+            .bind(with: self) { owner, value in
+                print(value.0, value.1)
+            }
+            .disposed(by: disposeBag)
+    }
+    
     func bind() {
         print(#function)
-        let items = Observable.just([
-            "First Item",
-            "Second Item",
-            "Third Item"
-        ])
+        
+        searchBar.rx.searchButtonClicked
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .withLatestFrom(searchBar.rx.text.orEmpty)
+            .distinctUntilChanged()
+            .bind(with: self) { owner, value in
+                print("리턴키 클릭")
+            }
+            .disposed(by: disposeBag)
+        
+        searchBar.rx.text.orEmpty
+            .distinctUntilChanged()
+            .bind(with: self) { owner, value in
+                print("실시간 글자")
+            }
+            .disposed(by: disposeBag)
 
         items
         .bind(to: tableView.rx.items) { (tableView, row, element) in
@@ -48,12 +76,16 @@ class SearchViewController: UIViewController {
             return cell
         }
         .disposed(by: disposeBag)
-        
-        tableView.rx.itemSelected
-            .bind { indexPath in
-                print(indexPath)
+        //2개 이상의 옵저버블을 하나로 합쳐줌
+        //zip vs combineLatest
+        Observable.combineLatest(tableView.rx.itemSelected, tableView.rx.modelSelected(String.self))
+            .map {
+                return "\($0.0)\($0.1)"
             }
-            .disposed(by: disposeBag)
+            .bind(with: self) { owner, value in
+                print(value) //index + data
+//                print(value.1) //data
+            }.disposed(by: disposeBag)
     }
      
     private func setSearchController() {
