@@ -50,42 +50,18 @@ class SearchViewController: UIViewController {
     }
     
     func bind() {
-        print(#function)
-        
-        searchBar.rx.searchButtonClicked
-            .throttle(.seconds(1), scheduler: MainScheduler.instance)
-            .withLatestFrom(searchBar.rx.text.orEmpty)
-            .distinctUntilChanged()
-            .bind(with: self) { owner, value in
-                print("리턴키 클릭")
-            }
-            .disposed(by: disposeBag)
-        
-        searchBar.rx.text.orEmpty
-            .distinctUntilChanged()
-            .bind(with: self) { owner, value in
-                print("실시간 글자")
-            }
-            .disposed(by: disposeBag)
-
         items
-        .bind(to: tableView.rx.items) { (tableView, row, element) in
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as! SearchTableViewCell
-            cell.appNameLabel.text = "\(element) @ row \(row)"
-            return cell
-        }
-        .disposed(by: disposeBag)
-        //2개 이상의 옵저버블을 하나로 합쳐줌
-        //zip vs combineLatest
-        Observable.combineLatest(tableView.rx.itemSelected, tableView.rx.modelSelected(String.self))
-            .map {
-                return "\($0.0)\($0.1)"
+            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, element, cell in
+                cell.appNameLabel.text = element
             }
-            .bind(with: self) { owner, value in
-                print(value) //index + data
-//                print(value.1) //data
-            }.disposed(by: disposeBag)
+            .disposed(by: disposeBag)
+        //서치바 + 엔터 + append
+        searchBar.rx.searchButtonClicked
+            .withLatestFrom(searchBar.rx.text.orEmpty)
+            .bind(with: self) { owner, jack in
+                print("Search Tap", jack)
+            }
+            .disposed(by: disposeBag)
     }
      
     private func setSearchController() {

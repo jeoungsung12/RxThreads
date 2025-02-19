@@ -28,6 +28,9 @@
 		04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */; };
 		04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */; };
 		04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DC012C5B0D8200667F4D /* DetailViewController.swift */; };
+		E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E73E2D6564720044D32E /* PhoneViewModel.swift */; };
+		E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7402D65703E0044D32E /* BirthdayViewModel.swift */; };
+		E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7422D65834F0044D32E /* SearchViewModel.swift */; };
 		E474B62E2D62C27E0086FD5B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E474B62D2D62C27E0086FD5B /* RxCocoa */; };
 		E474B6302D62C27E0086FD5B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E474B62F2D62C27E0086FD5B /* RxSwift */; };
 /* End PBXBuildFile section */
@@ -74,6 +77,9 @@
 		04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		04F6DC012C5B0D8200667F4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E458E73E2D6564720044D32E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
+		E458E7402D65703E0044D32E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
+		E458E7422D65834F0044D32E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,8 @@
 				0412806E2AEFAD2D00972552 /* BirthdayViewController.swift */,
 				041280702AEFAD3D00972552 /* PhoneViewController.swift */,
 				041280722AEFAD4B00972552 /* NicknameViewController.swift */,
+				E458E73E2D6564720044D32E /* PhoneViewModel.swift */,
+				E458E7402D65703E0044D32E /* BirthdayViewModel.swift */,
 			);
 			path = SignUpOptional;
 			sourceTree = "<group>";
@@ -202,6 +210,7 @@
 				04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */,
 				04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */,
 				04F6DC012C5B0D8200667F4D /* DetailViewController.swift */,
+				E458E7422D65834F0044D32E /* SearchViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -347,9 +356,12 @@
 			files = (
 				041280782AF1D14000972552 /* Resource.swift in Sources */,
 				0412806F2AEFAD2D00972552 /* BirthdayViewController.swift in Sources */,
+				E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */,
 				041280652AEFA2F000972552 /* SignTextField.swift in Sources */,
 				0412806C2AEFABFE00972552 /* PasswordViewController.swift in Sources */,
 				041280562AEFA04800972552 /* SignInViewController.swift in Sources */,
+				E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */,
+				E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */,

@@ -7,6 +7,8 @@
  
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class BirthdayViewController: UIViewController {
     
@@ -63,23 +65,48 @@ class BirthdayViewController: UIViewController {
         }
         return label
     }()
-  
-    let nextButton = PointButton(title: "가입하기")
     
+    let nextButton = PointButton(title: "가입하기")
+    private var disposeBag = DisposeBag()
+    private let viewModel = BirthdayViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.backgroundColor = Color.white
-        
         configureLayout()
-        
-        nextButton.addTarget(self, action: #selector(nextButtonClicked), for: .touchUpInside)
+        bind()
     }
     
-    @objc func nextButtonClicked() {
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+    private func bind() {
+        let input = BirthdayViewModel.Input(
+            birthday: birthDayPicker.rx.date,
+            nextTap: nextButton.rx.tap
+        )
+        let output = viewModel.transform(input)
+        
+        output.year
+            .bind(with: self) { owner, year in
+                owner.yearLabel.text = "\(year)년"
+            }.disposed(by: disposeBag)
+        
+        
+        output.month
+            .map { "\($0)월" }
+            .bind(to: monthLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        
+        output.day
+            .map { "\($0)일" }
+            .bind(to: dayLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.nextTap
+            .bind(with: self) { owner, _ in
+                owner.navigationController?.pushViewController(SearchViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
+            
     }
-
     
     func configureLayout() {
         view.addSubview(infoLabel)
