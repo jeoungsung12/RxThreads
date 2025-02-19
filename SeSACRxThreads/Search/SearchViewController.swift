@@ -23,11 +23,15 @@ class SearchViewController: UIViewController {
     let searchBar = UISearchBar()
     private var disposeBag = DisposeBag()
     
-    let items = Observable.just([
+    lazy var items = BehaviorSubject(value: data)
+    
+    var data = [
         "First Item",
         "Second Item",
-        "Third Item"
-    ])
+        "Third Item",
+        "AAA",
+        "C", "B", "AB", "BCA", "a","b","c","d","e","f"
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,15 +57,40 @@ class SearchViewController: UIViewController {
         items
             .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, element, cell in
                 cell.appNameLabel.text = element
+                cell.downloadButton.rx.tap
+                    .withUnretained(self)
+                    .bind(with: self) { owner, _ in
+                        owner.navigationController?.pushViewController(DetailViewController(), animated: true)
+                    }.disposed(by: cell.disposeBag)
             }
             .disposed(by: disposeBag)
+        
+        tableView.rx.rowHeight.onNext(180)
+        
         //서치바 + 엔터 + append
         searchBar.rx.searchButtonClicked
             .withLatestFrom(searchBar.rx.text.orEmpty)
             .bind(with: self) { owner, jack in
                 print("Search Tap", jack)
+                owner.data.insert(jack, at: 0)
+                owner.items.onNext(owner.data)
+                
             }
             .disposed(by: disposeBag)
+        
+        //실시간
+        searchBar.rx.text.orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler())
+            .distinctUntilChanged()
+            .map { text in
+                return self.data.filter { $0.contains(text) }
+            }
+            .bind(with: self) { owner, data in
+                owner.items.onNext(data.isEmpty ? owner.data : data)
+            }
+            .disposed(by: disposeBag)
+        
+        
     }
      
     private func setSearchController() {
