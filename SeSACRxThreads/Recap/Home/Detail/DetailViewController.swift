@@ -10,20 +10,26 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-
-final class DetailViewController: UIViewController {
+final class DetailViewController: BaseViewController {
+    
     let nextButton = PointButton(title: "다음")
     private var disposeBag = DisposeBag()
+    var viewModel: DetailViewModel
+    init(viewModel: DetailViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @MainActor
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .lightGray
-        navigationItem.title = "Detail"
-        view.addSubview(nextButton)
-        nextButton.snp.makeConstraints { make in
-            make.size.equalTo(60)
-            make.center.equalTo(view)
-        }
+    }
+    
+    override func setBinding() {
         let tap = nextButton.rx.tap
             .map { Int.random(in: 1...100) }
             .share(replay: 1)
@@ -43,6 +49,22 @@ final class DetailViewController: UIViewController {
                 print("3번 - \(value)")
             }
             .disposed(by: disposeBag)
+    }
+    
+    override func configureView() {
+        view.backgroundColor = .lightGray
+        navigationItem.title = viewModel.title
+    }
+    
+    override func configureHierarchy() {
+        view.addSubview(nextButton)
+    }
+    
+    override func configureLayout() {
+        nextButton.snp.makeConstraints { make in
+            make.size.equalTo(60)
+            make.center.equalTo(view)
+        }
     }
     
 }

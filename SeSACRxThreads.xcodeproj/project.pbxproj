@@ -27,7 +27,16 @@
 		04B0606A2D62A9D300A3155E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 04B060692D62A9D300A3155E /* SnapKit */; };
 		04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */; };
 		04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */; };
-		04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F6DC012C5B0D8200667F4D /* DetailViewController.swift */; };
+		E42DB46E2D66EF7C00F0A55C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4632D66EF7C00F0A55C /* PersonTableViewCell.swift */; };
+		E42DB46F2D66EF7C00F0A55C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4672D66EF7C00F0A55C /* DetailViewModel.swift */; };
+		E42DB4702D66EF7C00F0A55C /* HomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4692D66EF7C00F0A55C /* HomeworkViewController.swift */; };
+		E42DB4712D66EF7C00F0A55C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4602D66EF7C00F0A55C /* BaseViewController.swift */; };
+		E42DB4722D66EF7C00F0A55C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4612D66EF7C00F0A55C /* BaseViewModel.swift */; };
+		E42DB4732D66EF7C00F0A55C /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4642D66EF7C00F0A55C /* UserCollectionViewCell.swift */; };
+		E42DB4742D66EF7C00F0A55C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB45F2D66EF7C00F0A55C /* BaseTableViewCell.swift */; };
+		E42DB4762D66EF7C00F0A55C /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB45E2D66EF7C00F0A55C /* BaseCollectionViewCell.swift */; };
+		E42DB4772D66EF7C00F0A55C /* HomeworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB46A2D66EF7C00F0A55C /* HomeworkViewModel.swift */; };
+		E42DB4782D66EF7C00F0A55C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB4662D66EF7C00F0A55C /* DetailViewController.swift */; };
 		E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E73E2D6564720044D32E /* PhoneViewModel.swift */; };
 		E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7402D65703E0044D32E /* BirthdayViewModel.swift */; };
 		E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7422D65834F0044D32E /* SearchViewModel.swift */; };
@@ -77,6 +86,16 @@
 		04F6DBFD2C5B0C0300667F4D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		04F6DBFF2C5B0C2200667F4D /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		04F6DC012C5B0D8200667F4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E42DB45E2D66EF7C00F0A55C /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		E42DB45F2D66EF7C00F0A55C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		E42DB4602D66EF7C00F0A55C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E42DB4612D66EF7C00F0A55C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E42DB4632D66EF7C00F0A55C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		E42DB4642D66EF7C00F0A55C /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		E42DB4662D66EF7C00F0A55C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E42DB4672D66EF7C00F0A55C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		E42DB4692D66EF7C00F0A55C /* HomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewController.swift; sourceTree = "<group>"; };
+		E42DB46A2D66EF7C00F0A55C /* HomeworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModel.swift; sourceTree = "<group>"; };
 		E458E73E2D6564720044D32E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		E458E7402D65703E0044D32E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		E458E7422D65834F0044D32E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +152,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
+				E42DB45D2D66EF1400F0A55C /* Recap */,
 				041280532AEF9C1F00972552 /* SignUp */,
 				041280542AEF9C2600972552 /* SignIn */,
 				0412806D2AEFAD0F00972552 /* SignUpOptional */,
@@ -213,6 +233,55 @@
 				E458E7422D65834F0044D32E /* SearchViewModel.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		E42DB45D2D66EF1400F0A55C /* Recap */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB4622D66EF7C00F0A55C /* Base */,
+				E42DB46B2D66EF7C00F0A55C /* Home */,
+			);
+			path = Recap;
+			sourceTree = "<group>";
+		};
+		E42DB4622D66EF7C00F0A55C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB45E2D66EF7C00F0A55C /* BaseCollectionViewCell.swift */,
+				E42DB45F2D66EF7C00F0A55C /* BaseTableViewCell.swift */,
+				E42DB4602D66EF7C00F0A55C /* BaseViewController.swift */,
+				E42DB4612D66EF7C00F0A55C /* BaseViewModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E42DB4652D66EF7C00F0A55C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB4632D66EF7C00F0A55C /* PersonTableViewCell.swift */,
+				E42DB4642D66EF7C00F0A55C /* UserCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		E42DB4682D66EF7C00F0A55C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB4662D66EF7C00F0A55C /* DetailViewController.swift */,
+				E42DB4672D66EF7C00F0A55C /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		E42DB46B2D66EF7C00F0A55C /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E42DB4652D66EF7C00F0A55C /* Cell */,
+				E42DB4682D66EF7C00F0A55C /* Detail */,
+				E42DB4692D66EF7C00F0A55C /* HomeworkViewController.swift */,
+				E42DB46A2D66EF7C00F0A55C /* HomeworkViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +380,7 @@
 			packageReferences = (
 				04B060682D62A9D300A3155E /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E474B62C2D62C27E0086FD5B /* XCRemoteSwiftPackageReference "RxSwift" */,
+				E42DB47A2D66F17100F0A55C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -364,7 +434,6 @@
 				E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
-				04F6DC022C5B0D8200667F4D /* DetailViewController.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */,
 				04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */,
@@ -372,6 +441,16 @@
 				0412806A2AEFA91E00972552 /* SignUpViewController.swift in Sources */,
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
+				E42DB46E2D66EF7C00F0A55C /* PersonTableViewCell.swift in Sources */,
+				E42DB46F2D66EF7C00F0A55C /* DetailViewModel.swift in Sources */,
+				E42DB4702D66EF7C00F0A55C /* HomeworkViewController.swift in Sources */,
+				E42DB4712D66EF7C00F0A55C /* BaseViewController.swift in Sources */,
+				E42DB4722D66EF7C00F0A55C /* BaseViewModel.swift in Sources */,
+				E42DB4732D66EF7C00F0A55C /* UserCollectionViewCell.swift in Sources */,
+				E42DB4742D66EF7C00F0A55C /* BaseTableViewCell.swift in Sources */,
+				E42DB4762D66EF7C00F0A55C /* BaseCollectionViewCell.swift in Sources */,
+				E42DB4772D66EF7C00F0A55C /* HomeworkViewModel.swift in Sources */,
+				E42DB4782D66EF7C00F0A55C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -720,6 +799,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.7.1;
+			};
+		};
+		E42DB47A2D66F17100F0A55C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.2.0;
 			};
 		};
 		E474B62C2D62C27E0086FD5B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
