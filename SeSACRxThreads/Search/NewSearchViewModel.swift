@@ -79,9 +79,9 @@ extension NewSearchViewModel {
                 print("tap next")
                 switch result {
                 case let .success(data):
-                    
+                    print(data)
                 case let .failure(error):
-                    
+                    print(error)
                 }
 //                resultList.onNext(value.boxOfficeResult.dailyBoxOfficeList)
             } onError: { owner, error in

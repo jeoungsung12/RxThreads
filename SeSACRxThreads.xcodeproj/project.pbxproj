@@ -41,6 +41,8 @@
 		E42DB65D2D6BF7F400F0A55C /* NewSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB65C2D6BF7F400F0A55C /* NewSearchViewModel.swift */; };
 		E42DB65F2D6C0B2B00F0A55C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB65E2D6C0B2B00F0A55C /* NetworkManager.swift */; };
 		E42DB6622D6C0B4B00F0A55C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E42DB6612D6C0B4B00F0A55C /* Alamofire */; };
+		E42DB6EE2D6D674400F0A55C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E42DB6ED2D6D674400F0A55C /* RxDataSources */; };
+		E42DB6F02D6D675700F0A55C /* MultiSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */; };
 		E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E73E2D6564720044D32E /* PhoneViewModel.swift */; };
 		E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7402D65703E0044D32E /* BirthdayViewModel.swift */; };
 		E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7422D65834F0044D32E /* SearchViewModel.swift */; };
@@ -103,6 +105,7 @@
 		E42DB65A2D6BF67700F0A55C /* NewSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchViewController.swift; sourceTree = "<group>"; };
 		E42DB65C2D6BF7F400F0A55C /* NewSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSearchViewModel.swift; sourceTree = "<group>"; };
 		E42DB65E2D6C0B2B00F0A55C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionViewController.swift; sourceTree = "<group>"; };
 		E458E73E2D6564720044D32E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		E458E7402D65703E0044D32E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		E458E7422D65834F0044D32E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +119,7 @@
 				E474B6302D62C27E0086FD5B /* RxSwift in Frameworks */,
 				E42DB6622D6C0B4B00F0A55C /* Alamofire in Frameworks */,
 				E474B62E2D62C27E0086FD5B /* RxCocoa in Frameworks */,
+				E42DB6EE2D6D674400F0A55C /* RxDataSources in Frameworks */,
 				04B0606A2D62A9D300A3155E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +177,7 @@
 				0412802E2AEF9BAC00972552 /* LaunchScreen.storyboard */,
 				041280312AEF9BAC00972552 /* Info.plist */,
 				041280772AF1D14000972552 /* Resource.swift */,
+				E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */,
 			);
 			path = SeSACRxThreads;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 				E474B62D2D62C27E0086FD5B /* RxCocoa */,
 				E474B62F2D62C27E0086FD5B /* RxSwift */,
 				E42DB6612D6C0B4B00F0A55C /* Alamofire */,
+				E42DB6ED2D6D674400F0A55C /* RxDataSources */,
 			);
 			productName = SeSACRxThreads;
 			productReference = 041280202AEF9BAB00972552 /* SeSACRxThreads.app */;
@@ -394,6 +400,7 @@
 				E474B62C2D62C27E0086FD5B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E42DB47A2D66F17100F0A55C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E42DB6602D6C0B4B00F0A55C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E42DB6EC2D6D674400F0A55C /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 041280212AEF9BAB00972552 /* Products */;
 			projectDirPath = "";
@@ -450,6 +457,7 @@
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,
 				E42DB65F2D6C0B2B00F0A55C /* NetworkManager.swift in Sources */,
+				E42DB6F02D6D675700F0A55C /* MultiSectionViewController.swift in Sources */,
 				04F6DBFE2C5B0C0300667F4D /* SearchViewController.swift in Sources */,
 				04F6DC002C5B0C2200667F4D /* SearchTableViewCell.swift in Sources */,
 				E42DB65D2D6BF7F400F0A55C /* NewSearchViewModel.swift in Sources */,
@@ -833,6 +841,14 @@
 				minimumVersion = 5.10.2;
 			};
 		};
+		E42DB6EC2D6D674400F0A55C /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		E474B62C2D62C27E0086FD5B /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
@@ -853,6 +869,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E42DB6602D6C0B4B00F0A55C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		E42DB6ED2D6D674400F0A55C /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E42DB6EC2D6D674400F0A55C /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		E474B62D2D62C27E0086FD5B /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
