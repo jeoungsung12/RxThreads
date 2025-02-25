@@ -54,18 +54,18 @@ class SearchViewController: UIViewController {
     }
     
     func bind() {
-        items
-            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, element, cell in
-                cell.appNameLabel.text = element
-                cell.downloadButton.rx.tap
-                    .withUnretained(self)
-                    .bind(with: self) { owner, _ in
-                        owner.navigationController?.pushViewController(DetailViewController(), animated: true)
-                    }.disposed(by: cell.disposeBag)
-            }
-            .disposed(by: disposeBag)
-        
-        tableView.rx.rowHeight.onNext(180)
+//        items
+//            .bind(to: tableView.rx.items(cellIdentifier: SearchTableViewCell.identifier, cellType: SearchTableViewCell.self)) { row, element, cell in
+//                cell.appNameLabel.text = element
+//                cell.downloadButton.rx.tap
+//                    .withUnretained(self)
+//                    .bind(with: self) { owner, _ in
+//                        owner.navigationController?.pushViewController(DetailViewController(), animated: true)
+//                    }.disposed(by: cell.disposeBag)
+//            }
+//            .disposed(by: disposeBag)
+//        
+//        tableView.rx.rowHeight.onNext(180)
         
         //서치바 + 엔터 + append
         searchBar.rx.searchButtonClicked

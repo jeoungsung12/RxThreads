@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
-import Kingfisher
+//import Kingfisher
 
 struct Person: Identifiable, Hashable {
     let id = UUID()
@@ -23,7 +23,7 @@ final class HomeworkViewController: BaseViewController {
     private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     private let searchBar = UISearchBar()
     
-    private let viewModel = HomeworkViewModel()
+//    private let viewModel = HomeworkViewModel()
     private var disposeBag = DisposeBag()
     private let recent = BehaviorRelay(value: ["Jack"])
     private var items = BehaviorSubject(value: ["Test"])
@@ -34,40 +34,40 @@ final class HomeworkViewController: BaseViewController {
     }
      
     private func bind() {
-        let input = HomeworkViewModel.Input(searchbuttonTap: <#T##ControlEvent<Void>#>, searchText: <#T##ControlProperty<String>#>)
-        let output = viewModel.transform(input)
-        
-        searchBar.rx.searchButtonClicked
-            .withLatestFrom(searchBar.rx.text.orEmpty)
-            .map { "\($0)님"}
-            .asDriver(onErrorJustReturn: "손님")
-            .drive(with: self) { owner, value in
-                var data = try? owner.items.value()
-                data?.append(value)
-                owner.items.onNext(data)
-            }.disposed(by: disposeBag)
-        
-        recent
-            .asDriver()
-            .drive(collectionView.rx.items(cellIdentifier: UserCollectionViewCell.id, cellType: UserCollectionViewCell.self)) { items, element, cell in
-                cell.label.text = element
-            }
-            .disposed(by: disposeBag)
-        
-        items
-            .asDriver(onErrorDriveWith: [])
-            .drive(tableView.rx.items(cellIdentifier: PersonTableViewCell.id, cellType: PersonTableViewCell.self)) { row, element, cell in
-                cell.usernameLabel.text = element
-            }
-            .disposed(by: disposeBag)
-        
-        Observable.zip(tableView.rx.modelSelected(Int.self), tableView.rx.itemSelected)
-            .asDriver(onErrorDriveWith: [])
-            .map { $0.0 }
-            .drive(with: self) { owner, text in
-                print(text)
-            }
-            .disposed(by: disposeBag)
+//        let input = HomeworkViewModel.Input(searchbuttonTap: <#T##ControlEvent<Void>#>, searchText: <#T##ControlProperty<String>#>)
+//        let output = viewModel.transform(input)
+//        
+//        searchBar.rx.searchButtonClicked
+//            .withLatestFrom(searchBar.rx.text.orEmpty)
+//            .map { "\($0)님"}
+//            .asDriver(onErrorJustReturn: "손님")
+//            .drive(with: self) { owner, value in
+//                var data = try? owner.items.value()
+//                data?.append(value)
+//                owner.items.onNext(data)
+//            }.disposed(by: disposeBag)
+//        
+//        recent
+//            .asDriver()
+//            .drive(collectionView.rx.items(cellIdentifier: UserCollectionViewCell.id, cellType: UserCollectionViewCell.self)) { items, element, cell in
+//                cell.label.text = element
+//            }
+//            .disposed(by: disposeBag)
+//        
+//        items
+//            .asDriver(onErrorDriveWith: [])
+//            .drive(tableView.rx.items(cellIdentifier: PersonTableViewCell.id, cellType: PersonTableViewCell.self)) { row, element, cell in
+//                cell.usernameLabel.text = element
+//            }
+//            .disposed(by: disposeBag)
+//        
+//        Observable.zip(tableView.rx.modelSelected(Int.self), tableView.rx.itemSelected)
+//            .asDriver(onErrorDriveWith: [])
+//            .map { $0.0 }
+//            .drive(with: self) { owner, text in
+//                print(text)
+//            }
+//            .disposed(by: disposeBag)
         
     }
     

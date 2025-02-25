@@ -7,7 +7,7 @@
 
 import UIKit
 import SnapKit
-import Kingfisher
+//import Kingfisher
 import RxSwift
 import RxCocoa
 
@@ -79,7 +79,7 @@ final class PersonTableViewCell: BaseTableViewCell, ReusableIdentifier {
     func configure(_ model: Person) {
         usernameLabel.text = model.name
         if let url = URL(string: model.profileImage) {
-            profileImageView.kf.setImage(with: url)
+//            profileImageView.kf.setImage(with: url)
         }
     }
 }
