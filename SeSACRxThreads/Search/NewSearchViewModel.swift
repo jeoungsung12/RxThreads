@@ -40,16 +40,50 @@ extension NewSearchViewModel {
             }
             .map { return "\($0)"}
             .flatMapLatest { value in
-                return NetworkManager.shared.callBoxOffice(date: value)
-                    .debug("Movie")
-                    .catch { error in
-                        print("Movie Error", error)
-                        return Observable<Movie>.just(Movie(boxOfficeResult: BoxOfficeResult(dailyBoxOfficeList: [])))
-                    }
+                NetworkManager.shared.callBoxOfficeWithSingle2(date: value)
+//                return NetworkManager.shared.callBoxOffice(date: value)
+//                    .debug("Movie")
+//                    .catch { error in
+//                        switch error as! APIError {
+//                        case .invalidURL:
+//                            
+//                        case .statusError:
+//                            
+//                        case .unknownResponse:
+//                            
+//                        default:
+//
+//                        }
+//                        print("Movie Error", error)
+//                        return Observable<Movie>.just(Movie(boxOfficeResult: BoxOfficeResult(dailyBoxOfficeList: [])))
+//                    }
+//                NetworkManager.shared.callBoxOfficeWithSingle(date: value)
+//                    .catch { error in
+//                        return Single<Movie>.just(Movie(boxOfficeResult: BoxOfficeResult(dailyBoxOfficeList: [])))
+//                    }
+//                    .debug("Single Movie")
             }
+//            .flatMap { result in
+//                switch result {
+//                case let .success(data):
+//                    
+//                case let .failure(error):
+//                    
+//                }
+//            }
+//            .catch { error in
+//                return Observable<Movie>.just(Movie(boxOfficeResult: BoxOfficeResult(dailyBoxOfficeList: [])))
+//            }
             .debug("Tap")
-            .subscribe(with: self) { owner, value in
-                resultList.onNext(value.boxOfficeResult.dailyBoxOfficeList)
+            .subscribe(with: self) { owner, result in
+                print("tap next")
+                switch result {
+                case let .success(data):
+                    
+                case let .failure(error):
+                    
+                }
+//                resultList.onNext(value.boxOfficeResult.dailyBoxOfficeList)
             } onError: { owner, error in
                 print("onError", error)
             } onCompleted: { owner in

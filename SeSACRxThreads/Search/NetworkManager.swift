@@ -35,6 +35,47 @@ final class NetworkManager {
     
     private init() { }
     
+    func callBoxOfficeWithSingle2(date: String) -> Single<Result<Movie,APIError>> {
+        // Movie -> Result
+        return Single<Result<Movie,APIError>>.create { value in
+            let urlString =  "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=&targetDt=\(date)"
+            
+            guard let url = URL(string: urlString) else {
+                value(.success(.failure(APIError.invalidURL)))
+                return Disposables.create {
+                    print("Dispose 되었습니다. 끝!")
+                }
+            }
+            
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let _ = error {
+                    value(.success(.failure(APIError.unknownResponse)))
+                }
+                
+                guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+                    value(.success(.failure(APIError.statusError)))
+                    return
+                }
+                
+                if let data = data {
+                    do {
+                        let result = try JSONDecoder()
+                            .decode(Movie.self, from: data)
+                        value(.success(.failure(APIError.unknownResponse)))
+//                        value(.success(result))
+                    } catch {
+                        print(error.localizedDescription)
+                        value(.success(.failure(APIError.unknownResponse)))
+                    }
+                } else {
+                    value(.success(.failure(APIError.unknownResponse)))
+                }
+            }.resume()
+            
+            return Disposables.create { print("Dispose 되었습니다. 끝!") }
+        }
+    }
+    
     func callBoxOfficeWithSingle(date: String) -> Single<Movie> {
         
         return Single<Movie>.create { value in
