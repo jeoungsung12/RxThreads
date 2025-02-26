@@ -44,6 +44,7 @@
 		E42DB6EE2D6D674400F0A55C /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = E42DB6ED2D6D674400F0A55C /* RxDataSources */; };
 		E42DB6F02D6D675700F0A55C /* MultiSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */; };
 		E42DB7DC2D6E9DC500F0A55C /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */; };
+		E42DB7DE2D6EA24E00F0A55C /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */; };
 		E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E73E2D6564720044D32E /* PhoneViewModel.swift */; };
 		E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7402D65703E0044D32E /* BirthdayViewModel.swift */; };
 		E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7422D65834F0044D32E /* SearchViewModel.swift */; };
@@ -108,6 +109,7 @@
 		E42DB65E2D6C0B2B00F0A55C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionViewController.swift; sourceTree = "<group>"; };
 		E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
+		E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
 		E458E73E2D6564720044D32E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		E458E7402D65703E0044D32E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		E458E7422D65834F0044D32E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 			isa = PBXGroup;
 			children = (
 				E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */,
+				E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */,
 				E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				E42DB7DE2D6EA24E00F0A55C /* SimpleCollectionViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				E42DB7DC2D6E9DC500F0A55C /* SimpleTableViewController.swift in Sources */,
 				041280242AEF9BAB00972552 /* AppDelegate.swift in Sources */,

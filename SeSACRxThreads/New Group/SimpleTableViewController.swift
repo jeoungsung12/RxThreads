@@ -46,6 +46,7 @@ extension SimpleTableViewController: UITableViewDelegate, UITableViewDataSource 
         content.textProperties.font = .boldSystemFont(ofSize: 20)
         content.imageToTextPadding = 100
         cell.contentConfiguration = content
+        //최소 버전 14.0
         
         return cell
     }
