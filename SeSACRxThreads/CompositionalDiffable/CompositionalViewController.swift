@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 /*
  1. 겹침, Hashable 하지 않을때
  */
@@ -25,6 +27,37 @@ final class CompositionalViewController: UIViewController {
         configure()
         configureDatasource()
         configureSnapshot()
+        multiUnicast()
+    }
+    
+    private var disposeBag = DisposeBag()
+    private func multiUnicast() {
+//        let sampleInt = Observable<Int>.create { observer in
+//            observer.onNext(Int.random(in: 1...100))
+//            return Disposables.create()
+//        }
+        Observable.just([1,3,8])
+        
+        //구독시점과 상관없이 이벤트를 방출할수 있다.
+        let sampleInt = PublishSubject<Int>()
+        sampleInt.onNext(Int.random(in: 1...100))
+        sampleInt
+            .subscribe { value in
+                print("1: \(value)")
+            }
+            .disposed(by: disposeBag)
+        
+        sampleInt
+            .subscribe { value in
+                print("2: \(value)")
+            }
+            .disposed(by: disposeBag)
+        
+        sampleInt
+            .subscribe { value in
+                print("3: \(value)")
+            }
+            .disposed(by: disposeBag)
     }
     
     private var dataSource: UICollectionViewDiffableDataSource<Section,Int>?
@@ -118,6 +151,7 @@ final class CompositionalViewController: UIViewController {
                 section.orthogonalScrollingBehavior = .groupPagingCentered
                 section.interGroupSpacing = 24
                 return section
+                
             case .second:
                 let itemSize = NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
