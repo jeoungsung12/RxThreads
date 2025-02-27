@@ -45,6 +45,8 @@
 		E42DB6F02D6D675700F0A55C /* MultiSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */; };
 		E42DB7DC2D6E9DC500F0A55C /* SimpleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */; };
 		E42DB7DE2D6EA24E00F0A55C /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */; };
+		E42DB8542D6FEA8E00F0A55C /* CompositionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB8532D6FEA8E00F0A55C /* CompositionalViewController.swift */; };
+		E42DB8562D70001100F0A55C /* CompositionalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42DB8552D70001100F0A55C /* CompositionalCollectionViewCell.swift */; };
 		E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E73E2D6564720044D32E /* PhoneViewModel.swift */; };
 		E458E7412D65703E0044D32E /* BirthdayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7402D65703E0044D32E /* BirthdayViewModel.swift */; };
 		E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E458E7422D65834F0044D32E /* SearchViewModel.swift */; };
@@ -110,6 +112,8 @@
 		E42DB6EF2D6D675700F0A55C /* MultiSectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionViewController.swift; sourceTree = "<group>"; };
 		E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTableViewController.swift; sourceTree = "<group>"; };
 		E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		E42DB8532D6FEA8E00F0A55C /* CompositionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalViewController.swift; sourceTree = "<group>"; };
+		E42DB8552D70001100F0A55C /* CompositionalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalCollectionViewCell.swift; sourceTree = "<group>"; };
 		E458E73E2D6564720044D32E /* PhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewModel.swift; sourceTree = "<group>"; };
 		E458E7402D65703E0044D32E /* BirthdayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayViewModel.swift; sourceTree = "<group>"; };
 		E458E7422D65834F0044D32E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -168,7 +172,7 @@
 		041280222AEF9BAB00972552 /* SeSACRxThreads */ = {
 			isa = PBXGroup;
 			children = (
-				E42DB7DA2D6E9DB400F0A55C /* New Group */,
+				E42DB7DA2D6E9DB400F0A55C /* CompositionalDiffable */,
 				E42DB7D92D6E9DA800F0A55C /* Resource */,
 				E42DB7D72D6E9D9400F0A55C /* App */,
 				E42DB45D2D66EF1400F0A55C /* Recap */,
@@ -329,13 +333,15 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		E42DB7DA2D6E9DB400F0A55C /* New Group */ = {
+		E42DB7DA2D6E9DB400F0A55C /* CompositionalDiffable */ = {
 			isa = PBXGroup;
 			children = (
 				E42DB7DB2D6E9DC500F0A55C /* SimpleTableViewController.swift */,
 				E42DB7DD2D6EA24E00F0A55C /* SimpleCollectionViewController.swift */,
+				E42DB8532D6FEA8E00F0A55C /* CompositionalViewController.swift */,
+				E42DB8552D70001100F0A55C /* CompositionalCollectionViewCell.swift */,
 			);
-			path = "New Group";
+			path = CompositionalDiffable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +498,7 @@
 				E458E7432D65834F0044D32E /* SearchViewModel.swift in Sources */,
 				E458E73F2D6564720044D32E /* PhoneViewModel.swift in Sources */,
 				041280282AEF9BAB00972552 /* ViewController.swift in Sources */,
+				E42DB8562D70001100F0A55C /* CompositionalCollectionViewCell.swift in Sources */,
 				E42DB7DE2D6EA24E00F0A55C /* SimpleCollectionViewController.swift in Sources */,
 				041280632AEFA0CE00972552 /* PointButton.swift in Sources */,
 				E42DB7DC2D6E9DC500F0A55C /* SimpleTableViewController.swift in Sources */,
@@ -506,6 +513,7 @@
 				041280712AEFAD3D00972552 /* PhoneViewController.swift in Sources */,
 				041280262AEF9BAB00972552 /* SceneDelegate.swift in Sources */,
 				E42DB46E2D66EF7C00F0A55C /* PersonTableViewCell.swift in Sources */,
+				E42DB8542D6FEA8E00F0A55C /* CompositionalViewController.swift in Sources */,
 				E42DB46F2D66EF7C00F0A55C /* DetailViewModel.swift in Sources */,
 				E42DB4702D66EF7C00F0A55C /* HomeworkViewController.swift in Sources */,
 				E42DB4712D66EF7C00F0A55C /* BaseViewController.swift in Sources */,
